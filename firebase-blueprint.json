@@ -1,0 +1,114 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "User profile with role, contact info and academic meta",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "User unique Firebase UID"
+        },
+        "name": {
+          "type": "string",
+          "description": "User full name",
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address",
+          "maxLength": 150
+        },
+        "phone": {
+          "type": "string",
+          "description": "User phone number if registered via phone",
+          "maxLength": 25
+        },
+        "role": {
+          "type": "string",
+          "description": "Role: student, parent, faculty, or admin",
+          "enum": ["student", "parent", "faculty", "admin"]
+        },
+        "isAnonymous": {
+          "type": "boolean",
+          "description": "Whether the user logged in as a guest"
+        },
+        "studentClass": {
+          "type": "string",
+          "description": "Class grade e.g. Class 10",
+          "maxLength": 50
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation ISO timestamp"
+        }
+      },
+      "required": ["id", "role"]
+    },
+    "demoBookings": {
+      "title": "Demo Class Booking",
+      "description": "Requested free demo bookings",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Booking ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Student or parent name",
+          "maxLength": 100
+        },
+        "phone": {
+          "type": "string",
+          "description": "Contact phone number",
+          "maxLength": 25
+        },
+        "email": {
+          "type": "string",
+          "description": "Contact email",
+          "maxLength": 150
+        },
+        "studentClass": {
+          "type": "string",
+          "description": "Grade level",
+          "maxLength": 50
+        },
+        "subject": {
+          "type": "string",
+          "description": "Interested subject",
+          "maxLength": 100
+        },
+        "preferredTime": {
+          "type": "string",
+          "description": "Slot preference",
+          "maxLength": 100
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes",
+          "maxLength": 500
+        },
+        "userId": {
+          "type": "string",
+          "description": "User ID if signed in"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp"
+        }
+      },
+      "required": ["name", "phone", "studentClass", "subject"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profile collection"
+    },
+    "/demoBookings/{bookingId}": {
+      "schema": "demoBookings",
+      "description": "Demo booking collection"
+    }
+  }
+}

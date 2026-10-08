@@ -1,0 +1,29 @@
+# ==========================================
+# Nexis Academy - Official Robots Directive
+# Website: https://nexisacademy.com
+# ==========================================
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /courses
+Allow: /faculty
+Allow: /results
+Allow: /testimonials
+Allow: /faq
+Allow: /contact
+Allow: /blog
+Allow: /privacy
+Allow: /terms
+Allow: /assets/
+Allow: /logo.svg
+Allow: /og-image.svg
+
+# Protect Private & Protected Administrative Routes
+Disallow: /portal
+Disallow: /admin
+Disallow: /devmode
+Disallow: /api/
+
+# Canonical XML Sitemap Reference
+Sitemap: https://nexisacademy.com/sitemap.xml

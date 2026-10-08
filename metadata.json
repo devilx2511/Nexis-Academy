@@ -1,0 +1,6 @@
+{
+  "name": "Nexis Academy",
+  "description": "Premium tuition & coaching academy platform featuring 3D glassmorphism UI, interactive course finder, free demo class booking, student & parent portal, and expert faculty showcase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
